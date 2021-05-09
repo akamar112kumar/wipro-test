@@ -1,0 +1,51 @@
+﻿<style>
+    .cololl {
+    text-transform: uppercase;
+    letter-spacing: 25px;
+    padding: 15px 0px;
+    text-decoration: overline;
+    text-align: center;
+    color: #ffffff;
+    background-color: #007bff;
+    font-size: 2em;
+    font-weight: 600;
+    font-family: system-ui;
+}
+
+a.nav-item.nav-link {
+border: 2px solid #c3c5c7;
+    color: rgba(255,255,255,.5);
+    margin-left: 15px;
+    border-top-right-radius: 30px;
+}
+
+
+
+</style>
+
+<div class="cololl">
+  <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+                <div>
+                    <p>Wipro test app</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- nav -->
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="user">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav>
+
+<!-- main app container -->
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
+    <alert></alert>
+    <router-outlet></router-outlet>
+</div>
+
